@@ -27,5 +27,5 @@ else:
     BAK = ((GramAlkoholBier + GramAlkoholKorn) / GeschlechtGewichtBilanz)
 
 print("Ihre geschätzte Blutalkoholkonzentration liegt bei:",BAK) #Ergebnis
-if BAK > 0.5:
+if BAK > 0.49:
     print("Ihre Blutalkoholkonzentration ist zu hoch, Autofahren illegal!")
