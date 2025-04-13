@@ -1,3 +1,5 @@
+from time import sleep
+
 print("Willkommen zum Blutalkoholkonzentrationsrechner.") #Willkommensnachricht
 AnzahlBier = float(input("Wie viele Flaschen oder Gläser Bier haben Sie getrunken? (0,5L): ")) #Eingabe Anzahl Bier
 AnzahlKorn = float(input("Wie viele Flaschen Korn haben Sie getrunken? (0,02L): ")) #Eingabe Anzahl Korn
@@ -27,7 +29,10 @@ else:
     BAK = ((GramAlkoholBier + GramAlkoholKorn) / GeschlechtGewichtBilanz)
 
 print("Ihre geschätzte Blutalkoholkonzentration liegt bei:",BAK) #Ergebnis
+sleep(2)
 if BAK > 1.09:
     print("Ihre BAK ist deutlich zu hoch, Autofahren sehr illegal! Straftat mit bis zu 5 Jahre Führerscheinentzug und möglicher Freiheitsstrafe.")
+    sleep(10)
 elif BAK > 0.49:
     print("Ihre BAK ist zu hoch, Autofahren illegal! Ordnungswidrigkeit mit bis zu 1000€ Strafe.")
+    sleep(10)
