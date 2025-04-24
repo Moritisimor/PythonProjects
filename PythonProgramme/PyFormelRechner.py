@@ -1,4 +1,4 @@
-#Import von Pi und Sleep und Willkommensnachricht
+#Import von Pi und Sleep und Willkommensnachricht.
 
 from math import pi
 from time import sleep
@@ -17,10 +17,10 @@ while True:
         else:
             print("Bitte wählen Sie Volumen oder Fläche: ")
 
-    #Erfassung, welchen Körper der Nutzer berechnen will
+    #Erfassung, welchen Körper der Nutzer berechnen will.
 
     while True:
-        if VOF.lower() in["fläche"]:
+        if VOF.lower() in["fläche"]: #Falls Fläche ausgewählt wurde.
             print("Momentan sind folgende Körper verfügbar:") #Verfügbare Körper Zeile für Zeile aufgelistet.
             print("Viereck")
             print("Dreieck")
@@ -89,15 +89,15 @@ while True:
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
                 
             elif VOF.lower() in["quader"]:
-                QuaderA = float(input("Bitte geben Sie A an:"))
-                QuaderB = float(input("Bitte geben Sie B an:"))
-                QuaderC = float(input("Bitte geben Sie C an:"))
+                QuaderA = float(input("Bitte geben Sie A an: "))
+                QuaderB = float(input("Bitte geben Sie B an: "))
+                QuaderC = float(input("Bitte geben Sie C an: "))
                 print(QuaderA * QuaderB * QuaderC)
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
                 
             elif VOF.lower() in["prisma"]:
-                PrismaGrundFlaeche = float(input("Bitte geben Sie die Grundfläche in cm² an: "))
+                PrismaGrundFlaeche = float(input("Bitte geben Sie die Grundfläche an: "))
                 PrismaHoehe = float(input("Bitte geben Sie die Höhe an: "))
                 print(PrismaGrundFlaeche * PrismaHoehe)
                 sleep(1)
