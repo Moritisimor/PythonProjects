@@ -7,6 +7,8 @@ print("Willkommen zum Formelrechner, wo Flächen und Volumen verschiedener Körp
 print("Möchten Sie die Fläche oder Das Volumen ausrechnen?")
 
 #Erfassung, ob der Nutzer Volumen oder Fläche ausrechnen will.
+#Globable While True Schleife, um zu sehen, ob der Nutzer noch mal was ausrechnen will.
+
 while True:
     while True:
         VOF = input("Volumen oder Fläche: ")
@@ -19,13 +21,29 @@ while True:
 
     while True:
         if VOF.lower() in["fläche"]:
-            VOF = (input("Wählen Sie zwischen Viereck, Dreieck oder Kreis: "))
-        elif VOF.lower() in["volumen"]:
-            VOF = (input("Wählen Sie zwischen Prisma, Sphäre, Kegel, Würfel, Pyramide oder Quader: "))
+            print("Momentan sind folgende Körper verfügbar:") #Verfügbare Körper Zeile für Zeile aufgelistet.
+            print("Viereck")
+            print("Dreieck")
+            print("Kreis")
+
+            VOF = (input("Wählen Sie einen der Körper aus: ")) #Körperauswahl.
+
+        elif VOF.lower() in["volumen"]: #Falls Volumen ausgewählt wurde.
+            print("Momentan sind folgende Körper verfügbar:") #Verfügbare Körper werden Zeile für Zeile aufgelistet.
+            print("Kegel")
+            print("Würfel")
+            print("Pyramide")
+            print("Quader")
+            print("Prisma")
+            print("Sphäre")
+            
+            VOF = (input("Wählen Sie einen der Körper aus: ")) 
         else:
             break
 
-    #Eigentliche Berechnung von Fläche und Volumen sowie Ausgabe
+    #Eigentliche Berechnung von Fläche und Volumen.
+    #Try-Catch Block um Fehler abzufangen bei ungültiger Eingabe.
+
     try:
             if VOF.lower() in["viereck"]:
                 FlaecheViereckA = float(input("Bitte geben Sie A an: "))
@@ -48,7 +66,7 @@ while True:
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Quadrateinheiten)")
 
-            #Rein der Übersicht-dienende Trennung von Fläche und Volumen
+            #Rein der Übersicht-dienende Trennung von Fläche und Volumen.
 
             elif VOF.lower() in["kegel"]:
                 RadiusKegel = float(input("Bitte geben Sie den Radius an: "))
