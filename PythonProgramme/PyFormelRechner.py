@@ -15,7 +15,7 @@ while True:
         if VOF.lower() in["volumen","fläche"]:
             break
         else:
-            print("Bitte wählen Sie Volumen oder Fläche: ")
+            print("Bitte wählen Sie Volumen oder Fläche.")
 
     #Erfassung, welchen Körper der Nutzer berechnen will.
 
