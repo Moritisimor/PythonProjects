@@ -27,7 +27,10 @@ while True:
             print("-", "Kreis")
 
             Koerper = (input("Wählen Sie einen der Körper aus: ")) #Körperauswahl.
-            break
+            if Koerper.lower() in["viereck", "dreieck", "kreis"]:
+                break
+            else:
+                print("Bitte wählen Sie einen gültigen Körper aus.")
 
         elif VOF.lower() in["volumen"]: #Falls Volumen ausgewählt wurde.
             print("Momentan sind folgende Körper verfügbar:") #Verfügbare Körper werden Zeile für Zeile aufgelistet.
@@ -39,7 +42,10 @@ while True:
             print("-", "Sphäre")
             
             Koerper = (input("Wählen Sie einen der Körper aus: ")) 
-            break
+            if Koerper.lower() in["kegel", "würfel", "pyramide", "quader", "prisma", "sphäre"]:
+                break
+            else:
+                print("Bitte geben Sie einen gültigen Körper an.")
 
     #Eigentliche Berechnung von Fläche und Volumen.
     #Try-Catch Block um Fehler abzufangen bei ungültiger Eingabe.
@@ -108,9 +114,6 @@ while True:
                 print((4 / 3) * pi * SphaereRadius * SphaereRadius  * SphaereRadius)
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
-
-            else:
-                print("Bitte geben Sie einen gültigen Körper an.")
                 
             nochmal = input("Möchten Sie noch etwas berechnen? ")
             if nochmal in["nein","n"]:
