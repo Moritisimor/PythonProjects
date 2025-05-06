@@ -6,6 +6,7 @@ def narrate(text, delay = 2):
     print(text)
     sleep(delay)
         
+characterList = ["Jessica", "Rob", "Olivia", "Fred"]
 
 print("Welcome to the PyPy Programming Club!")
 input("Press Enter to start! ")
@@ -18,8 +19,12 @@ narrate("Welcome to the game!", 1)
 #Finished fake loading screen.
 
 name = input("Enter your name: ")
+if name.lower() in ["monty"]:
+    print("How did you find out? You have been here before haven't you? Get out.")
+    exit()
+
 sleep(1)
-narrate("Name succesfully set!", 1)
+narrate("Name successfully set!", 1)
 narrate("As you woke up today you realized something:", 3)
 narrate("Summer break has ended.")
 narrate("That means today you will have to go back to school.", 3)
@@ -56,29 +61,83 @@ narrate("Jessica: this is Fred, our Java programmer!")
 narrate("Fred: Hey what's up.")
 narrate("Jessica: then there's Rob, the C expert!")
 narrate("Rob got up from his chair and walked over to you.")
-narrate("Hello.")
+narrate("Rob: Hello.")
 narrate("He'd then hold out his hand for you to shake.")
 
 #Shake Robert's hand?
 
 while True:
-    ShakeHand = input("Y/N: ")
+    shakeHand = input("Y/N: ")
     sleep(1)
-    if ShakeHand in ["y", "yes"]:
+    if shakeHand in ["y", "yes"]:
         narrate("You shake his hand and he smiles a bit.")
-        DidNotShakeHand = False
+        didNotShakeHand = False
         break
-    elif ShakeHand in ["n", "no"]:
-        DidNotShakeHand = True
+    elif shakeHand in ["n", "no"]:
+        didNotShakeHand = True
         narrate("Rob looks a little sad. Why wouldn't you shake his hand?")
         break
     else:
         narrate("Choose yes or no.", 1)
 
-if DidNotShakeHand:
+if didNotShakeHand:
     narrate("Jessica looks a little weirded out.")
 else:
     narrate("Jessica looks happy that you're already making friends.")
 
 narrate("Jessica: And then we have our final member: Olivia. She is very good with JavaScript!")
 narrate("Olivia: Hi how are ya?")
+narrate(name + ": Good, you?")
+narrate("Olivia: Good too thank you for asking.")
+narrate("Jessica: Alright guys, since I'm the president I think we we should begin coding now.")
+narrate("Who will you work with?")
+
+#Who will you work with?
+
+while True:
+    for i in characterList:
+        print("-" + i)
+    workWithWho = input("Choose who to work with: ")
+
+    if workWithWho.lower() in ["jessica"]:
+        workedWithJessica = True
+        narrate("Jessica: Almost figured you'd choose me. C'mon lets go.")
+        narrate("You and Jessica work on a small database. While you work she grows more fond of you.")
+        break
+
+    elif workWithWho.lower() in ["rob"]:
+        workedWithRob = True
+        if didNotShakeHand:
+            narrate("Rob looks at you a little irritated but decides to work with you.")
+            narrate("Rob: Alright I think this experimental kernel is looking pretty good so far.")
+            break
+        else:
+            narrate("Rob smiles at you and gladly works with you.")
+            narrate("Rob: Have you developed kernels before? This looks amazing!")
+            break
+
+    elif workWithWho.lower() in ["fred"]:
+        workedWithFred = True
+        narrate("Fred gets his laptop out of his bag and opens his IDE of choice.")
+        narrate("Fred: Let's get to work then.")
+        narrate("You and Fred began working on a game backend with success.")
+        break
+
+    elif workWithWho.lower() in ["olivia"]:
+        workedWithOlivia = True
+        narrate("Olivia sits down at one of the club's computers and pats the chair next to her.")
+        narrate("Without exchanging many words you two made a nice looking website.")
+        break
+
+    else:
+        narrate("Please choose one of the available entries.")
+
+narrate("After a nice day of coding with your newfound friends in the club you head home.")
+if didNotShakeHand and not workedWithRob:
+    narrate("You feel a bit bad for how you treated Rob today.")
+    narrate("You feel a little guilty.")
+    narrate("You can't take your guilt anymore.")
+    narrate("ILLEGAL OBJECT FOUND IN 0x7FA3D41E")
+    narrate("Continuing regardless.") #Lowercase = not your system! That is Monty
+
+narrate("You go to sleep.")
