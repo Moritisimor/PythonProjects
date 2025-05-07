@@ -1,4 +1,6 @@
 from time import sleep
+from random import randint
+from os import name as OS, system
 
 #Debugging Delay Switch
 
@@ -16,6 +18,19 @@ characterList = ["Jessica", "Rob", "Olivia", "Fred"]
 print("Welcome to the PyPy Programming Club!")
 input("Press Enter to start! ")
 sleep(1)
+if OS not in["nt", "posix"]:
+    narrate("Hello! The game has detected that you are not on a common OS.")
+    narrate("First off, respect to you! Second, I would like to warn you that a syscall later WILL NOT work.")
+    narrate("However, this doesn't you can't play the game, instead, the console simply won't clear. Not that bad, right?", 3)
+    while True:
+        print("Continue anyway?")
+        quitIfNotCommonOS = input("Y/N: ")
+        if quitIfNotCommonOS.lower() in ["n", "no"]:
+            exit()
+        elif quitIfNotCommonOS.lower() in ["y", "yes"]:
+            break
+
+
 narrate("...", 1)
 narrate("Loading files to RAM...", 3)
 narrate("Loading Complete!", 1)
@@ -108,13 +123,11 @@ while True:
     workWithWho = input("Choose who to work with: ")
 
     if workWithWho.lower() in ["jessica"]:
-        workedWithRob = False
         narrate("Jessica: Almost figured you'd choose me. C'mon lets go.")
         narrate("You and Jessica work on a small database. While you work she grows more fond of you.")
         break
 
     elif workWithWho.lower() in ["rob"]:
-        workedWithRob = True
         if didNotShakeHand:
             narrate("Rob looks at you a little irritated but decides to work with you.")
             narrate("Rob: Alright I think this experimental kernel is looking pretty good so far.")
@@ -125,20 +138,22 @@ while True:
             break
 
     elif workWithWho.lower() in ["fred"]:
-        workedWithRob = False
         narrate("Fred gets his laptop out of his bag and opens his IDE of choice.")
         narrate("Fred: Let's get to work then.")
         narrate("You and Fred began working on a game backend with success.")
         break
 
     elif workWithWho.lower() in ["olivia"]:
-        workedWithRob = False
         narrate("Olivia sits down at one of the club's computers and pats the chair next to her.")
         narrate("Without exchanging many words you two made a nice looking website.")
         break
 
     else:
         narrate("Please choose one of the available entries.")
+
+    if workWithWho.lower() == "rob":
+        workedWithRob = True
+    else: workedWithRob = False
 
 narrate("After a nice day of coding with your newfound friends in the club you head home.")
 if didNotShakeHand and not workedWithRob:
@@ -149,3 +164,45 @@ if didNotShakeHand and not workedWithRob:
     narrate("Continuing regardless.") #Lowercase = not your system! That is Monty
 
 narrate("You go to sleep.")
+sleepRandom1 = randint(0, 1)
+if sleepRandom1 == 0:
+    sleepGoodDay1 = False
+    narrate("You wake up the next day feeling more tired than usual.")
+    narrate("You head out to school, surprised you don't see Jessica on your way.")
+    narrate("As you arrive in school you go over to Jessica.")
+    narrate(name + ": Where were you? I thought we'd head over to school together like usual.")
+    narrate("Jessica: Oh I'm sorry James, today I felt like going to school with ILLEGAL OBJECT AT 0x7FA3D41E.", 1)
+    narrate("FATAL ERROR: ILLEGAL OBJECT FOUND")
+    narrate("Pesky game, why won't you just let me...", 1)
+else:
+    sleepGoodDay1 = True
+    narrate("You wake up the next day feeling energetic and refreshed.")
+    narrate("As you head out of the house you meet Jessica like usual.")
+    narrate("You two head to school together.")
+    narrate("As you two walk to school, Jessica talks to you.")
+    narrate("Jessica: Hey have you heard? Apparently, we're getting a new student called ILLEGAL OBJECT AT 0x7FA3D41E!", 1)
+    narrate("FATAL ERROR: ILLEGAL OBJECT FOUND")
+    narrate("Why won't you stop? Just let me...", 1)
+
+narrate("TOO MANY ERRORS, CLEANING UP...", 3) 
+if OS == "posix": #Console cleaning if Posix-based OS
+    system("clear")
+elif OS == "nt": #Console cleaning if Windows
+    system("cls")
+else:
+    print("Unknown or exotic operating system. Sorry buddy.") #What are you using at this point?
+
+narrate("Like yesterday you immediately head to the clubroom.")
+narrate("name" + ": Hi guys!")
+if didNotShakeHand and not workedWithRob:
+    narrate("Everyone greets you back except Rob, who just stares at you with his metallic-blue eyes.")
+    narrate("A shiver runs down your spine.")
+    narrate("Rob walks over to you.")
+    narrate("Rob: Monty is watching.")
+else:
+    narrate("Everyone greets you back.")
+
+narrate("Jessica: Ok guys, I've got an announcement to make!")
+narrate("Jessica: The principal has hired us to make a website for our school!")
+narrate("Olivia perks up upon hearing the word website and stares at Jessica, smiling.")
+narrate("Jessica: Yes Olivia I figured you'd like that.")
