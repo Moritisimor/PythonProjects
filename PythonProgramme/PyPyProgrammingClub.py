@@ -1,10 +1,15 @@
 from time import sleep
 
+#Debugging Delay Switch
+
+noDelay = True
+
 #Start.
 
 def narrate(text, delay = 2):
     print(text)
-    sleep(delay)
+    if not noDelay:
+     sleep(delay)
         
 characterList = ["Jessica", "Rob", "Olivia", "Fred"]
 
@@ -33,7 +38,7 @@ narrate("That means today you will have to go back to school.", 3)
 narrate("As you left the house you were immediately greeted by your friend, Jessica.", 3)
 narrate("Jessica: Hi " + name + "! How have you been?")
 narrate(name + ": Been doing good, thanks. And you?")
-narrate("Jessica: I've been doing well too thanks for asking...")
+narrate("Jessica: I've been doing well too, thanks for asking...")
 narrate("Jessica: Say, are you interested in joining a club this year? The Software club is looking for members, y'know...", 3)
 narrate("Join the software club?")
 
@@ -69,6 +74,7 @@ narrate("He'd then hold out his hand for you to shake.")
 #Shake Robert's hand?
 
 while True:
+    print("Shake his hand?")
     shakeHand = input("Y/N: ")
     sleep(1)
     if shakeHand in ["y", "yes"]:
@@ -102,7 +108,7 @@ while True:
     workWithWho = input("Choose who to work with: ")
 
     if workWithWho.lower() in ["jessica"]:
-        workedWithJessica = True
+        workedWithRob = False
         narrate("Jessica: Almost figured you'd choose me. C'mon lets go.")
         narrate("You and Jessica work on a small database. While you work she grows more fond of you.")
         break
@@ -119,14 +125,14 @@ while True:
             break
 
     elif workWithWho.lower() in ["fred"]:
-        workedWithFred = True
+        workedWithRob = False
         narrate("Fred gets his laptop out of his bag and opens his IDE of choice.")
         narrate("Fred: Let's get to work then.")
         narrate("You and Fred began working on a game backend with success.")
         break
 
     elif workWithWho.lower() in ["olivia"]:
-        workedWithOlivia = True
+        workedWithRob = False
         narrate("Olivia sits down at one of the club's computers and pats the chair next to her.")
         narrate("Without exchanging many words you two made a nice looking website.")
         break
