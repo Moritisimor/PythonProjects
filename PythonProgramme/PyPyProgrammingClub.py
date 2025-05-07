@@ -21,7 +21,7 @@ sleep(1)
 if OS not in["nt", "posix"]:
     narrate("Hello! The game has detected that you are not on a common OS.")
     narrate("First off, respect to you! Second, I would like to warn you that a syscall later WILL NOT work.")
-    narrate("However, this doesn't you can't play the game, instead, the console simply won't clear. Not that bad, right?", 3)
+    narrate("However, this doesn't mean that you can't play the game, instead, the console simply won't clear. Not that bad, right?", 3)
     while True:
         print("Continue anyway?")
         quitIfNotCommonOS = input("Y/N: ")
