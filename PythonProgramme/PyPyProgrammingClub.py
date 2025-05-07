@@ -20,7 +20,9 @@ narrate("Welcome to the game!", 1)
 
 name = input("Enter your name: ")
 if name.lower() in ["monty"]:
-    print("How did you find out? You have been here before haven't you? Get out.")
+    narrate("How did you find out?")
+    narrate("You have been here before, haven't you?")
+    narrate("Get out.")
     exit()
 
 sleep(1)
