@@ -190,7 +190,7 @@ if OS == "posix": #Console cleaning if Posix-based OS
 elif OS == "nt": #Console cleaning if Windows
     system("cls")
 else:
-    print("Unknown or exotic operating system. Sorry buddy.") #What are you using at this point?
+    print("Unknown or exotic OS, could not clear.") #What are you using at this point?
 
 narrate("Like yesterday you immediately head to the clubroom.")
 narrate("name" + ": Hi guys!")
