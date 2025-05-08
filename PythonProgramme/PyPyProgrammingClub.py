@@ -4,7 +4,7 @@ from os import name as OS, system
 
 #Debugging Delay Switch
 
-noDelay = True
+noDelay = False
 
 #Start.
 
@@ -57,7 +57,7 @@ narrate("Jessica: Hi " + name + "! How have you been?")
 narrate(name + ": Been doing good, thanks. And you?")
 narrate("Jessica: I've been doing well too, thanks for asking...")
 narrate("Jessica: Say, are you interested in joining a club this year? The Software club is looking for members, y'know...", 3)
-narrate("Join the software club?")
+print("Join the software club?")
 
 #Will you join the club?
 
@@ -86,7 +86,7 @@ narrate("Fred: Hey what's up.")
 narrate("Jessica: then there's Rob, the C expert!")
 narrate("Rob got up from his chair and walked over to you.")
 narrate("Rob: Hello.")
-narrate("He'd then hold out his hand for you to shake.")
+print("He'd then hold out his hand for you to shake.")
 
 #Shake Robert's hand?
 
@@ -115,7 +115,7 @@ narrate("Olivia: Hi how are ya?")
 narrate(name + ": Good, you?")
 narrate("Olivia: Good too thank you for asking.")
 narrate("Jessica: Alright guys, since I'm the president I think we we should begin coding now.")
-narrate("Who will you work with?")
+print("Who will you work with?")
 
 #Who will you work with?
 
@@ -123,6 +123,10 @@ while True:
     for i in characterList:
         print("-" + i)
     workWithWho = input("Choose who to work with: ")
+
+    if workWithWho.lower() == "rob":
+        workedWithRob = True
+    else: workedWithRob = False
 
     if workWithWho.lower() in ["jessica"]:
         narrate("Jessica: Almost figured you'd choose me. C'mon lets go.")
@@ -153,16 +157,12 @@ while True:
     else:
         narrate("Please choose one of the available entries.")
 
-    if workWithWho.lower() == "rob":
-        workedWithRob = True
-    else: workedWithRob = False
-
 narrate("After a nice day of coding with your newfound friends in the club you head home.")
 if didNotShakeHand and not workedWithRob:
     narrate("You feel a bit bad for how you treated Rob today.")
     narrate("You feel a little guilty.")
     narrate("You can't take your guilt anymore.")
-    narrate("ILLEGAL OBJECT FOUND IN 0x7FA3D41E")
+    narrate("ILLEGAL OBJECT FOUND IN 0x7FA3D41E", 0.5)
     narrate("Continuing regardless.") #Lowercase = not your system! That is Monty
 
 narrate("You go to sleep.")
@@ -192,10 +192,10 @@ if OS == "posix": #Console cleaning if Posix-based OS
 elif OS == "nt": #Console cleaning if Windows
     system("cls")
 else:
-    print("Unknown or exotic OS, could not clear.") #What are you using at this point?
+    print("UNKNOWN OR EXOTIC OS, COULD NOT CLEAR.") #What are you using at this point?
 
 narrate("Like yesterday you immediately head to the clubroom.")
-narrate("name" + ": Hi guys!")
+narrate(name + ": Hi guys!")
 if didNotShakeHand and not workedWithRob:
     narrate("Everyone greets you back except Rob, who just stares at you with his metallic-blue eyes.")
     narrate("A shiver runs down your spine.")
@@ -208,3 +208,25 @@ narrate("Jessica: Ok guys, I've got an announcement to make!")
 narrate("Jessica: The principal has hired us to make a website for our school!")
 narrate("Olivia perks up upon hearing the word website and stares at Jessica, smiling.")
 narrate("Jessica: Yes Olivia I figured you'd like that.")
+narrate("Jessica: Anyway I decided that we will split this up, I and Olivia will take care of the frontend...")
+narrate("Jessica: And Rob and Fred will take care of the backend!")
+narrate("Fred: But who will " + name + " work with?")
+while True:
+    print("Who will you work with?")
+    for group in ["1. Jessica's Group", "2. Rob's Group"]:
+        print(group)
+    workWithWhoWebsite = input("Enter your group of choice: ")
+
+    #If you decide to work with Jessica.
+
+    if workWithWhoWebsite.lower() in ["1", "jessica's group", "jessicas group"]:
+        narrate(name + ": I'll work with Olivia and Jessica.")
+        narrate("You chose to work with Jessica and Olivia!")
+        narrate("As you three work, you encounter a cryptic Error:")
+        narrate("Error 1002: MONTY")
+        narrate("You search it but you find no entries online.")
+        narrate("Jessica: Huh, that's strange... Monty, huh? Kinda reminds me of Monty Python.")
+        narrate(name + ": Yeah it does.")
+        narrate("Suddenly, the PSU of the PC starts smoking.")
+        narrate("Jessica: WHAT THE HELL??", 1)
+        narrate("Jessica runs towards the clubroom's fire extinguisher and extinguishes the now full-on burning power supply", 3)
