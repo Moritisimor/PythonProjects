@@ -29,8 +29,8 @@ lowerRealName = realName.lower()
 
 #Debugging Delay Switch.
 
-noDelay = True
-noConsoleClear = True
+noDelay = False
+noConsoleClear = False
 
 #Start.
 
