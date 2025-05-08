@@ -29,6 +29,8 @@ if OS not in["nt", "posix"]:
             exit()
         elif quitIfNotCommonOS.lower() in ["y", "yes"]:
             break
+        else:
+            print("Please choose yes or no.")
 
 
 narrate("...", 1)
