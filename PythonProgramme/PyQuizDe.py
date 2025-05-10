@@ -1,115 +1,52 @@
 from random import randint
-from time import sleep
 
 print("Willkommen zum Quiz")
-QuizAuswahl = randint (0,9)
 input("Bitte drücken Sie Enter um fortzufahren: ")
-if QuizAuswahl in [0]:
-    Quiz = input("Welches ist das größte Tier der Welt? ")
-    if Quiz.lower() in ["blauwal"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
 
-elif QuizAuswahl in [1]:
-    Quiz = input("In welchem Land liegt der Kilimandscharo? ")
-    if Quiz.lower() in ["tansania"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+def Quiz(frage, richtigeAntwort):
+    while True:
+        print(frage)
+        antwort = input("Geben Sie Ihre Antwort ein: ")
+        if antwort.lower() in [richtigeAntwort]:
+            print("Das ist korrekt!")
+            break
+        else:
+            print("Das ist falsch!")
+            break
 
-elif QuizAuswahl in [2]:
-    Quiz = input("Was ist der kleinste Staat der Welt? ")
-    if Quiz.lower() in ["vatikan", "vatikanstadt"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+while True:
+    QuizAuswahl = randint (0,9)
 
-elif QuizAuswahl in [3]:
-    Quiz = input("In welchem Jahr begann der zweite Weltkrieg? ")
-    if Quiz in ["1939"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+    if QuizAuswahl == 0:
+        Quiz("Was ist das größte Tier der Welt?", "blauwal")
+        
+    elif QuizAuswahl == 1:
+        Quiz("In welchem Land liegt der Kilimandscharo?", "tansania")
 
-elif QuizAuswahl in [4]:
-    Quiz = input("Wer war der erste Mensch im All? ")
-    if Quiz.lower() in ["yuri gagarin", "juri gagarin"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+    elif QuizAuswahl == 2:
+        Quiz("Was ist der kleinste Staat der Welt?", "vatikan") 
+    
+    elif QuizAuswahl == 3:
+        Quiz("In welchem Jahr begann der zweite Weltkrieg", "1939")
 
-elif QuizAuswahl in [5]:
-    Quiz = input("Wie viele Sterne hat die Flagge der USA? ")
-    if Quiz.lower() in ["50", "fünfzig"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+    elif QuizAuswahl == 4:
+        Quiz("Wer war der erste Mensch im Weltraum?", "juri gagarin")
 
-elif QuizAuswahl in [6]:
-    Quiz = input("Was ist das schnellste Tier an Land? ")
-    if Quiz.lower() in ["gepard"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+    elif QuizAuswahl == 5:
+        Quiz("Wie viele Sterne hat die Flagge der USA?", "50")
 
-elif QuizAuswahl in [7]:
-    Quiz = input("Was war das erste Videospiel der Welt? ")
-    if Quiz.lower() in ["pong"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+    elif QuizAuswahl == 6:
+        Quiz("Was ist das schnellste Tier an Land?", "gepard")
 
-elif QuizAuswahl in [8]:
-    Quiz = input("Wie viele Planeten hat unser Sonnensystem? ")
-    if Quiz.lower() in ["8", "acht"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+    elif QuizAuswahl == 7:
+        Quiz("Was war das erste Videospiel der Welt?", "pong")
 
-elif QuizAuswahl in [9]:
-    Quiz = input("Wer ist der Autor von 1984? ")
-    if Quiz.lower() in ["george orwell"]:
-        print("Das ist richtig.")
-        sleep(3)
-        exit()
-    else:
-        print("Das ist falsch.")
-        sleep(3)
-        exit()
+    elif QuizAuswahl == 8:
+        Quiz("Wie viele Planeten hat unser Sonnensystem?", "8")
+
+    elif QuizAuswahl == 9:
+        Quiz("Wer ist der Autor von dem Roman 1984?", "george orwell")
+
+    nochMal = input("Möchten Sie noch mal spielen? ")
+    if nochMal in ["nein", "n"]:
+        break
