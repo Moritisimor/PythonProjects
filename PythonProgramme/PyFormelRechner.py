@@ -7,6 +7,10 @@ print("Willkommen zum Formelrechner, wo Flächen und Volumen verschiedener Körp
 print("Möchten Sie die Fläche oder Das Volumen ausrechnen?")
 
 #Erfassung, ob der Nutzer Volumen oder Fläche ausrechnen will.
+
+flaechenKoerper = ["Viereck", "Dreieck", "Kreis"]
+volumenKoerper = ["Kegel", "Pyramide", "Quader", "Sphäre", "Würfel", "Prisma"]
+
 #Globable While True Schleife, um zu sehen, ob der Nutzer noch mal was ausrechnen will.
 
 while True:
@@ -22,43 +26,40 @@ while True:
     while True:
         if VOF.lower() in["fläche"]: #Falls Fläche ausgewählt wurde.
             print("Momentan sind folgende Körper verfügbar:") #Verfügbare Körper Zeile für Zeile aufgelistet.
-            print("-", "Viereck")
-            print("-", "Dreieck")
-            print("-", "Kreis")
+            for koerper in flaechenKoerper :
+                print("-" + koerper)
 
-            Koerper = (input("Wählen Sie einen der Körper aus: ")) #Körperauswahl.
-            if Koerper.lower() in["viereck", "dreieck", "kreis"]:
+            koerperAuswahl = (input("Wählen Sie einen der Körper aus: ")) #Körperauswahl.
+            if koerperAuswahl.lower() in [koerper.lower() for koerper in flaechenKoerper]:
                 break
             else:
                 print("Bitte wählen Sie einen gültigen Körper aus.")
+        
 
         elif VOF.lower() in["volumen"]: #Falls Volumen ausgewählt wurde.
             print("Momentan sind folgende Körper verfügbar:") #Verfügbare Körper werden Zeile für Zeile aufgelistet.
-            print("-", "Kegel")
-            print("-", "Würfel")
-            print("-", "Pyramide")
-            print("-", "Quader")
-            print("-", "Prisma")
-            print("-", "Sphäre")
+            for koerper in volumenKoerper:
+                print("-" + koerper)
             
-            Koerper = (input("Wählen Sie einen der Körper aus: ")) 
-            if Koerper.lower() in["kegel", "würfel", "pyramide", "quader", "prisma", "sphäre"]:
+            koerperAuswahl = (input("Wählen Sie einen der Körper aus: ")) 
+            if koerper.lower() in [koerper.lower() for koerper in volumenKoerper]:
                 break
             else:
-                print("Bitte geben Sie einen gültigen Körper an.")
+                print("Bitte wählen Sie einen gültigen Körper aus.")
+        
 
     #Eigentliche Berechnung von Fläche und Volumen.
     #Try-Catch Block um Fehler abzufangen bei ungültiger Eingabe.
 
     try:
-            if Koerper.lower() in["viereck"]:
+            if koerperAuswahl.lower() in["viereck"]:
                 FlaecheViereckA = float(input("Bitte geben Sie A an: "))
                 FlaecheViereckB = float(input("Bitte geben Sie B an: "))
                 print(FlaecheViereckA * FlaecheViereckB)
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Quadrateinheiten)")
                 
-            elif Koerper.lower() in["dreieck"]:
+            elif koerperAuswahl.lower() in["dreieck"]:
                 GrundseiteDreieck = float(input("Bitte geben Sie die Grundseite an: "))
                 HoeheDreieck = float(input("Bitte geben Sie die Höhe an: "))
                 GH = (GrundseiteDreieck * HoeheDreieck)
@@ -66,7 +67,7 @@ while True:
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Quadrateinheiten)")
 
-            elif Koerper.lower() in["kreis"]:
+            elif koerperAuswahl.lower() in["kreis"]:
                 RadiusKreis = float(input("Bitte geben Sie den Radius an: "))
                 print(pi * RadiusKreis * RadiusKreis)
                 sleep(1)
@@ -74,27 +75,27 @@ while True:
 
             #Rein der Übersicht-dienende Trennung von Fläche und Volumen.
 
-            elif Koerper.lower() in["kegel"]:
+            elif koerperAuswahl.lower() in["kegel"]:
                 RadiusKegel = float(input("Bitte geben Sie den Radius an: "))
                 HoeheKegel = float(input("Bitte geben Sie die Höhe an: "))
                 print(1 / 3 * pi * RadiusKegel * RadiusKegel * HoeheKegel)
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
             
-            elif Koerper.lower() in["würfel"]:
+            elif koerperAuswahl.lower() in["würfel"]:
                 WuerfelA = float(input("Bitte geben Sie A an: "))
                 print(WuerfelA * WuerfelA * WuerfelA)
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
                 
-            elif Koerper.lower() in["pyramide"]:
+            elif koerperAuswahl.lower() in["pyramide"]:
                 PyramideA = float(input("Bitte geben Sie A an: "))
                 HoehePyramide = float(input("Bitte geben Sie die Höhe an: "))
                 print((1 / 3) * PyramideA * PyramideA * HoehePyramide)
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
                 
-            elif Koerper.lower() in["quader"]:
+            elif koerperAuswahl.lower() in["quader"]:
                 QuaderA = float(input("Bitte geben Sie A an: "))
                 QuaderB = float(input("Bitte geben Sie B an: "))
                 QuaderC = float(input("Bitte geben Sie C an: "))
@@ -102,14 +103,14 @@ while True:
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
                 
-            elif Koerper.lower() in["prisma"]:
+            elif koerperAuswahl.lower() in["prisma"]:
                 PrismaGrundFlaeche = float(input("Bitte geben Sie die Grundfläche an: "))
                 PrismaHoehe = float(input("Bitte geben Sie die Höhe an: "))
                 print(PrismaGrundFlaeche * PrismaHoehe)
                 sleep(1)
                 print("(Hinweis: Ergebnis ist in Kubikeinheiten)")
                 
-            elif Koerper.lower() in["sphäre"]:
+            elif koerperAuswahl.lower() in["sphäre"]:
                 SphaereRadius = float(input("Bitte geben Sie den Radius an: "))
                 print((4 / 3) * pi * SphaereRadius * SphaereRadius  * SphaereRadius)
                 sleep(1)
@@ -118,8 +119,6 @@ while True:
             nochmal = input("Möchten Sie noch etwas berechnen? ")
             if nochmal in["nein","n"]:
                 break
-            else:
-                continue
 
     except ValueError:
         print("Bitte richtige Zahlen eingeben.")
