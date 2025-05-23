@@ -4,7 +4,7 @@ while True:
     print("Welcome to the Py Number guessing game!")
     while True:
         try:
-            toWhatNumber = int(input("Enter the amount of possible numbers: "))
+            toWhatNumber = int(input("Enter the highest number you can guess up to: "))
             break
         except ValueError:
             print("Please enter a valid number.")
