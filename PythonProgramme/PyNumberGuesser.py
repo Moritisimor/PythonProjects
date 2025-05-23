@@ -27,7 +27,7 @@ while True:
         playAgain = input("Play again? Y/N: ")
         if playAgain.lower() in ["y", "yes"]:
             break
-        elif playAgain in ["no", "n"]:
+        elif playAgain.lower() in ["no", "n"]:
             exit()
         else:
             print("Please choose yes or no.")
