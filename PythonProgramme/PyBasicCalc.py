@@ -6,5 +6,7 @@ if op == "+":
     print(x + y)
 elif op == "-":
     print(x - y)
-elif op == "+":
+elif op == "*":
     print(x * y)
+elif op == "/":
+    print(x / y)
