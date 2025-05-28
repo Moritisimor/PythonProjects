@@ -1,6 +1,5 @@
 #Willkommensnachricht, Eingabeerfassungen und Import von Pi sowie Sleep
 
-
 from math import pi
 from time import sleep
 
