@@ -4,13 +4,15 @@ from math import pi
 from time import sleep
 
 print("Willkommen zum Pizza Rechner, einem Tool, das Ihnen Zeigt, welche von 2 Pizzen günstiger pro cm² ist.")
-Radius1 = float(input("Geben Sie den Radius der ersten Pizza in cm an: "))
-Preis1 = float(input("Geben Sie den Preis der ersten Pizza in Euro an: "))
-Radius2 = float(input("Geben Sie den Radius der zweiten Pizza in cm an: "))
-Preis2 = float(input("Geben Sie den Preis der zweiten Pizza in Euro an: "))
-
+try:
+    Radius1 = float(input("Geben Sie den Radius der ersten Pizza in cm an: "))
+    Preis1 = float(input("Geben Sie den Preis der ersten Pizza in Euro an: "))
+    Radius2 = float(input("Geben Sie den Radius der zweiten Pizza in cm an: "))
+    Preis2 = float(input("Geben Sie den Preis der zweiten Pizza in Euro an: "))
+except ValueError:
+    print("Bitte nur Zahlen eingeben.")
+    
 #Ab hier werden die Preise in Euro pro cm² berechnet
-
 
 Flaeche1 = (pi * Radius1 * Radius1)
 Flaeche2 = (pi * Radius2 * Radius2)
