@@ -21,22 +21,22 @@ while True:
     elif message.lower() in["tell me a joke"]:
         joke = randint(0, 3)
 
-        if joke in[0]:
+        if joke == 0:
             print("BPCB: Why don't skeletons fight each other?")
             sleep(2)
             print("BPCB: They don't have the guts!")
 
-        elif joke in[1]:
+        elif joke == 1:
             print("BPCB: I used to play the piano by ear...")
             sleep(2)
             print("BPCB: Now I play with my hands.")
 
-        elif joke in[2]:
+        elif joke == 2:
             print("BPCB: Why did the scarecrow win an award?")
             sleep(2)
             print("BPCB: Because he was outstanding in his field!")
 
-        elif joke in[3]:
+        elif joke == 3:
             print("BPCB: I do have a joke about construction...")
             sleep(2)
             print("BPCB: But I'm still working on it!")
