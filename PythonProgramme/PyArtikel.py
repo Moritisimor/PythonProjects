@@ -20,9 +20,18 @@ tastatur := Artikel("Tastatur", 17.49, 70),
 maus := Artikel("Maus", 9.99, 93)
 ]
 
+artikelListePruefung = []
+
 for artikel in artikelListe:
     print("-", artikel.bezeichnung, str(artikel.preis) + "€")
+    artikelListePruefung.insert(0, artikel.bezeichnung.lower())
 
-pc.kaufen()
+print(artikelListePruefung)
 
-print(pc.stueckzahl)
+while True:
+    artikelAuswahl = input("Wählen Sie Ihren gewünschten Artikel aus: ")
+    if artikelAuswahl.lower() in artikelListePruefung:
+        print("Auswahl erfolgreich getätigt!")
+        break
+    else:
+        print("Bitte wählen Sie einen gültigen Artikel aus.")
