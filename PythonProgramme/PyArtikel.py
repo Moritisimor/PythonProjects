@@ -4,12 +4,25 @@ class Artikel:
         self.preis = preis
         self.stueckzahl = stueckzahl
 
+    def kaufen(self):
+        if self.stueckzahl == 0:
+            print("Entschuldigung, aber das Produkt ist ausverkauft.")
+        else:
+            self.stueckzahl -= 1
+
+    def rueckgabe(self):
+        self.stueckzahl += 1
+
 artikelListe = [
-Artikel("PC", 249.99, 14),
-Artikel("Laptop", 199.99, 18),
-Artikel("Tastatur", 17.49, 70),
-Artikel("Maus", 9.99, 93)
+pc := Artikel("PC", 249.99, 14),
+laptop := Artikel("Laptop", 199.99, 18),
+tastatur := Artikel("Tastatur", 17.49, 70),
+maus := Artikel("Maus", 9.99, 93)
 ]
 
 for artikel in artikelListe:
-    print("-" + artikel.bezeichnung + " " + str(artikel.preis) + "€")
+    print("-", artikel.bezeichnung, str(artikel.preis) + "€")
+
+pc.kaufen()
+
+print(pc.stueckzahl)
