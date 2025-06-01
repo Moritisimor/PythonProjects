@@ -42,7 +42,7 @@ while True:
                 print("-" + koerper)
             
             koerperAuswahl = (input("Wählen Sie einen der Körper aus: ")) 
-            if koerper.lower() in [koerper.lower() for koerper in volumenKoerper]:
+            if koerperAuswahl.lower() in [koerper.lower() for koerper in volumenKoerper]:
                 break
             else:
                 print("Bitte wählen Sie einen gültigen Körper aus.")
