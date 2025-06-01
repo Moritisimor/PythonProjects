@@ -4,6 +4,8 @@ class Artikel:
         self.preis = preis
         self.stueckzahl = stueckzahl
 
+    # Kundenmethoden Anfang
+
     def kaufen(self):
         if self.stueckzahl == 0:
             print("Entschuldigung, aber das Produkt ist ausverkauft.")
@@ -12,6 +14,15 @@ class Artikel:
 
     def rueckgabe(self):
         self.stueckzahl += 1
+
+    #  Kundenmethoden Ende
+
+    #  Besitzermethoden Anfang
+
+    def lieferung(self, anzahl):
+        self.stueckzahl = self.stueckzahl + anzahl
+
+    #Adminmethoden Ende
 
 artikelListe = [
 pc := Artikel("PC", 249.99, 14),
@@ -35,3 +46,6 @@ while True:
         break
     else:
         print("Bitte wählen Sie einen gültigen Artikel aus.")
+
+print("")
+artikelAuswahlOption = input("Wählen Sie eine Option für den Artikel aus: ")
