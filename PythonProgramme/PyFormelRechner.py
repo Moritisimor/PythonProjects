@@ -122,4 +122,4 @@ while True:
 
     except ValueError:
         print("Bitte richtige Zahlen eingeben.")
-        print("Erlaubt sind Gleitkommazahlen (3.5, 6.4, 15.3 etc.) und Ganzzahlen (1, 2, 5, 10 etc.)")
+        print("Erlaubt sind Gleitkommazahlen (3.5, 6.4, 15.3 etc.) und Ganzzahlen (1, 2, 5, 10 etc.).")
