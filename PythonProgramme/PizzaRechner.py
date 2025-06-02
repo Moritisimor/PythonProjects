@@ -1,4 +1,4 @@
-#Willkommensnachricht, Eingabeerfassungen und Import von Pi sowie Sleep
+#Willkommensnachricht, Eingabeerfassungen und Import von Pi
 
 from math import pi
 
