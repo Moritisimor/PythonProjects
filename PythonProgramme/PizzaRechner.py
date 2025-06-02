@@ -1,7 +1,6 @@
 #Willkommensnachricht, Eingabeerfassungen und Import von Pi sowie Sleep
 
 from math import pi
-from time import sleep
 
 print("Willkommen zum Pizza Rechner, einem Tool, das Ihnen Zeigt, welche von 2 Pizzen günstiger pro cm² ist.")
 while True:
