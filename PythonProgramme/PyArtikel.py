@@ -10,10 +10,10 @@ class Artikel:
         if self.stueckzahl == 0:
             print("Entschuldigung, aber das Produkt ist ausverkauft.")
         else:
-            self.stueckzahl = -1
+            self.stueckzahl -= 1
 
     def kunde_rueckgabe(self):
-        self.stueckzahl = +1
+        self.stueckzahl += 1
 
     def auflistung_kundenmethoden(self):
         return [m for m in dir(self) if m.startswith("kunde")]
