@@ -6,23 +6,20 @@ class Artikel:
 
     # Kundenmethoden Anfang
 
-    def kaufen(self):
+    def kunde_kaufen(self):
         if self.stueckzahl == 0:
             print("Entschuldigung, aber das Produkt ist ausverkauft.")
         else:
-            self.stueckzahl -= 1
+            self.stueckzahl = -1
 
-    def rueckgabe(self):
-        self.stueckzahl += 1
+    def kunde_rueckgabe(self):
+        self.stueckzahl = +1
 
-    #  Kundenmethoden Ende
+    def auflistung_kundenmethoden(self):
+        return [m for m in dir(self) if m.startswith("kunde")]
 
-    #  Besitzermethoden Anfang
-
-    def lieferung(self, anzahl):
+    def besitzer_lieferung(self, anzahl):
         self.stueckzahl = self.stueckzahl + anzahl
-
-    #Adminmethoden Ende
 
 artikelListe = [
 pc := Artikel("PC", 249.99, 14),
@@ -33,11 +30,10 @@ maus := Artikel("Maus", 9.99, 93)
 
 artikelListePruefung = []
 
-for artikel in artikelListe:
-    print("-", artikel.bezeichnung, str(artikel.preis) + "€")
-    artikelListePruefung.insert(0, artikel.bezeichnung.lower())
-
-print(artikelListePruefung)
+def zeig_artikel():
+    for artikel in artikelListe:
+        print("-", artikel.bezeichnung, str(artikel.preis) + "€")
+        artikelListePruefung.insert(0, artikel.bezeichnung.lower())
 
 while True:
     artikelAuswahl = input("Wählen Sie Ihren gewünschten Artikel aus: ")
@@ -47,5 +43,4 @@ while True:
     else:
         print("Bitte wählen Sie einen gültigen Artikel aus.")
 
-print("")
 artikelAuswahlOption = input("Wählen Sie eine Option für den Artikel aus: ")
