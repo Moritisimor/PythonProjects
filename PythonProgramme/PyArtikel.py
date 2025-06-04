@@ -15,9 +15,6 @@ class Artikel:
     def kunde_rueckgabe(self):
         self.stueckzahl += 1
 
-    def auflistung_kundenmethoden(self):
-        return [m for m in dir(self) if m.startswith("kunde")]
-
     def besitzer_lieferung(self, anzahl):
         self.stueckzahl = self.stueckzahl + anzahl
 
@@ -34,6 +31,8 @@ def zeig_artikel():
     for artikel in artikelListe:
         print("-", artikel.bezeichnung, str(artikel.preis) + "€")
         artikelListePruefung.insert(0, artikel.bezeichnung.lower())
+
+zeig_artikel()
 
 while True:
     artikelAuswahl = input("Wählen Sie Ihren gewünschten Artikel aus: ")
