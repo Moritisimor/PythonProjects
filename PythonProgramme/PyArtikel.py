@@ -4,17 +4,17 @@ class Artikel:
         self.preis = preis
         self.stueckzahl = stueckzahl
 
-    def kunde_kaufen(self):
-        if self.stueckzahl == 0:
-            print("Entschuldigung, aber das Produkt ist ausverkauft.")
+    def kunde_kaufen(self, menge):
+        if self.stueckzahl < menge:
+            print("Entschuldigung, aber so viel haben wir nicht mehr auf Lager.")
         else:
-            self.stueckzahl -= 1
+            self.stueckzahl -= menge
 
-    def kunde_rueckgabe(self):
-        self.stueckzahl += 1
+    def kunde_rueckgabe(self, menge):
+        self.stueckzahl += menge
 
-    def besitzer_lieferung(self, anzahl):
-        self.stueckzahl = self.stueckzahl + anzahl
+    def besitzer_lieferung(self, menge):
+        self.stueckzahl += menge
 
 artikelListe = [
 pc := Artikel("PC", 249.99, 14),
@@ -24,24 +24,33 @@ maus := Artikel("Maus", 9.99, 93)
 ]
 
 artikelListePruefung = []
+for artikel in artikelListe:
+    artikelListePruefung.insert(0, artikel.bezeichnung.lower())
 
-def zeig_artikel():
+while True:
     for artikel in artikelListe:
         print("-", artikel.bezeichnung, str(artikel.preis) + "€")
-        artikelListePruefung.insert(0, artikel.bezeichnung.lower())
 
-zeig_artikel()
 
-while True:
-    artikelAuswahl = input("Wählen Sie den Artikel aus, den sie kaufen möchten: ")
-    if artikelAuswahl.lower() in artikelListePruefung:
+    while True:
+        artikelAuswahl = input("Wählen Sie den Artikel aus, den sie kaufen möchten: ")
+        if artikelAuswahl.lower() in artikelListePruefung:
+            break
+        else:
+            print("Bitte wählen Sie einen gültigen Artikel aus.")
+
+    while True:
+        try:
+            artikelAuswahlMenge = int(input("Geben Sie an, wie viel Sie bestellen wollen: "))
+            break
+        except ValueError:
+            print("Bitte Geben Sie nur Ganzzahlen an.")
+
+    print("Möchten Sie noch etwas bestellen?")
+    nochMal = input("J/N: ")
+    if nochMal.lower() in ["j", "ja"]:
+        continue
+    elif nochMal.lower() in ["n", "nein"]:
         break
     else:
-        print("Bitte wählen Sie einen gültigen Artikel aus.")
-
-while True:
-    try:
-        artikelAuswahlMenge = int(input("Geben Sie an, wie viel Sie bestellen wollen: "))
-        break
-    except ValueError:
-        print("Bitte Geben Sie nur Ganzzahlen an.")
+        print("Bitte Ja oder Nein eingeben.")
