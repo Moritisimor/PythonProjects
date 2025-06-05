@@ -4,8 +4,6 @@ class Artikel:
         self.preis = preis
         self.stueckzahl = stueckzahl
 
-    # Kundenmethoden Anfang
-
     def kunde_kaufen(self):
         if self.stueckzahl == 0:
             print("Entschuldigung, aber das Produkt ist ausverkauft.")
@@ -35,11 +33,15 @@ def zeig_artikel():
 zeig_artikel()
 
 while True:
-    artikelAuswahl = input("Wählen Sie Ihren gewünschten Artikel aus: ")
+    artikelAuswahl = input("Wählen Sie den Artikel aus, den sie kaufen möchten: ")
     if artikelAuswahl.lower() in artikelListePruefung:
-        print("Auswahl erfolgreich getätigt!")
         break
     else:
         print("Bitte wählen Sie einen gültigen Artikel aus.")
 
-artikelAuswahlOption = input("Wählen Sie eine Option für den Artikel aus: ")
+while True:
+    try:
+        artikelAuswahlMenge = int(input("Geben Sie an, wie viel Sie bestellen wollen: "))
+        break
+    except ValueError:
+        print("Bitte Geben Sie nur Ganzzahlen an.")
