@@ -1,5 +1,7 @@
 from random import randint
 
+cheat = False #Cheat feature for if you want to be a little cheater. Should be True or False.
+
 while True:
     print("Welcome to the Py Number guessing game!")
     while True:
@@ -9,19 +11,24 @@ while True:
         except ValueError:
             print("Please enter a valid number.")
 
-    toThisNumber = randint(0, toWhatNumber)
+    randomNumber = randint(0, toWhatNumber)
     while True:
         try:
+            if cheat:
+                print(f"Your number is: {randomNumber}")
             guess = int(input(f"Guess any number between 0 and {toWhatNumber}: "))
             break
         except ValueError:
             print("Please enter a valid number.")
 
-    if guess == toThisNumber:
+    if guess == randomNumber:
         print("You guessed correctly")
     else:
         print("You guessed incorrectly!")
-        print(f"The Number was {toThisNumber}!")
+        if cheat:
+            print("How'd you get that wrong?")
+        else:
+            print(f"The Number was {randomNumber}!")
     
     while True:
         playAgain = input("Play again? Y/N: ")
