@@ -1,3 +1,5 @@
+from random import randint
+
 class Artikel:
     def __init__(self, bezeichnung, preis, stueckzahl):
         self.bezeichnung = bezeichnung
@@ -15,6 +17,21 @@ class Artikel:
 
     def besitzer_lieferung(self, menge):
         self.stueckzahl += menge
+
+def bestellbestaetigung(nachname, vorname, strasse, hausnummer, zahlungsmethode, lieferzeitraum, bestellter_artikel):
+    print("Sie haben bestellt:")
+    print(str(artikelAuswahlMenge) + "x", bestellter_artikel)
+    print("Ihre Lieferadresse:")
+    print(vorname, nachname)
+    print(strasse, str(hausnummer))
+    print("Voraussichtlicher Lieferzeitraum:")
+    print(lieferzeitraum)
+    print("Ihre Zahlungsmethode:")
+    print(zahlungsmethode)
+    input("Drücken Sie Enter zum bestätigen: ")
+
+
+zahlungsmethodenListe = ["Banküberweisung", "Kreditkarte", "DebitKarte", "BuyFriend", "Rechnung"]
 
 artikelListe = [
 pc := Artikel("PC", 249.99, 14),
@@ -45,6 +62,33 @@ while True:
             break
         except ValueError:
             print("Bitte Geben Sie nur Ganzzahlen an.")
+
+    while True:
+        bestellungNachname = input("Geben Sie Ihren Nachnamen an: ")
+        bestellungVorname = input("Geben Sie Ihren Vornamen an: ")
+        bestellungStrasse = input("Geben Sie Ihren Straßennamen an: ")
+        while True:
+            try:
+                bestellungHausnummer = int(input("Geben Sie Ihre Hausnummer an: "))
+                break
+            except ValueError:
+                print("Bitte Geben Sie nur Ganzzahlen an.")
+        break
+
+    while True:
+        for zahlungsMethode in zahlungsmethodenListe:
+            print("-", zahlungsMethode)
+
+        bestellungZahlungsmethode = input("Wählen Sie Ihre Zahlungsmethode aus: ")
+        if bestellungZahlungsmethode.lower() in (zahlungsMethode.lower() for zahlungsMethode in zahlungsmethodenListe):
+            break
+        else:
+            print("Bitte wählen Sie eine der oben genannten Zahlungsmethoden aus.")
+
+    bestellungLieferzeitraum = str(randint(2, 3)) + " Tage"
+
+    bestellbestaetigung(bestellungNachname, bestellungVorname, bestellungStrasse, bestellungHausnummer,
+    bestellungZahlungsmethode, bestellungLieferzeitraum, artikelAuswahl)
 
     print("Möchten Sie noch etwas bestellen?")
     nochMal = input("J/N: ")
