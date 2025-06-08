@@ -53,19 +53,12 @@ while True: # Hier geht es zurück wenn der Nutzer noch was bestellen will.
         except ValueError:
             print("Bitte Geben Sie nur positive Ganzzahlen an.")
 
-    while True:
-        bestellungNachname = input("Geben Sie Ihren Nachnamen an: ")
-        bestellungVorname = input("Geben Sie Ihren Vornamen an: ")
-        bestellungStrasse = input("Geben Sie Ihren Straßennamen an: ")
-        while True:
-            try:
-                bestellungHausnummer = int(input("Geben Sie Ihre Hausnummer an: "))
-                break
-            except ValueError:
-                print("Bitte Geben Sie nur Ganzzahlen an.")
-        break
+    bestellungNachname = input("Geben Sie Ihren Nachnamen an: ")
+    bestellungVorname = input("Geben Sie Ihren Vornamen an: ")
+    bestellungStrasse = input("Geben Sie Ihren Straßennamen an: ")
+    bestellungHausnummer = input("Geben Sie Ihre Hausnummer an: ")
 
-    while True:
+    while True: # Hier geht es zurück, wenn der Nutzer eine Zahlungsmethode angibt, die nicht existiert.
         for zahlungsMethode in zahlungsmethodenListe:
             print("-", zahlungsMethode)
 
@@ -78,14 +71,14 @@ while True: # Hier geht es zurück wenn der Nutzer noch was bestellen will.
     bestellungLieferzeitraum = str(randint(2, 3)) + " Tage"
 
     print("Sie haben bestellt:")
-    print(str(artikelAuswahlMenge) + "x", artikelAuswahl)
+    print(str(artikelAuswahlMenge) + "x", artikelAuswahl + "\n")
     print("Ihre Lieferadresse:")
     print(bestellungVorname, bestellungNachname)
-    print(bestellungStrasse, str(bestellungHausnummer))
+    print(bestellungStrasse, bestellungHausnummer + "\n")
     print("Voraussichtlicher Lieferzeitraum:")
-    print(bestellungLieferzeitraum)
+    print(bestellungLieferzeitraum + "\n")
     print("Ihre Zahlungsmethode:")
-    print(bestellungZahlungsmethode)
+    print(bestellungZahlungsmethode + "\n")
     input("Drücken Sie Enter zum bestätigen: ")
 
     print("Möchten Sie noch etwas bestellen?")
