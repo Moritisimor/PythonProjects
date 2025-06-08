@@ -18,19 +18,6 @@ class Artikel:
     def besitzer_lieferung(self, menge):
         self.stueckzahl += menge
 
-def bestellbestaetigung(nachname, vorname, strasse, hausnummer, zahlungsmethode, lieferzeitraum, bestellter_artikel):
-    print("Sie haben bestellt:")
-    print(str(artikelAuswahlMenge) + "x", bestellter_artikel)
-    print("Ihre Lieferadresse:")
-    print(vorname, nachname)
-    print(strasse, str(hausnummer))
-    print("Voraussichtlicher Lieferzeitraum:")
-    print(lieferzeitraum)
-    print("Ihre Zahlungsmethode:")
-    print(zahlungsmethode)
-    input("Drücken Sie Enter zum bestätigen: ")
-
-
 zahlungsmethodenListe = ["Banküberweisung", "Kreditkarte", "DebitKarte", "BuyFriend", "Rechnung"]
 
 artikelListe = [
@@ -39,29 +26,32 @@ laptop := Artikel("Laptop", 199.99, 18),
 tastatur := Artikel("Tastatur", 17.49, 70),
 maus := Artikel("Maus", 9.99, 93)
 ]
-
 artikelListePruefung = []
+
 for artikel in artikelListe:
     artikelListePruefung.insert(0, artikel.bezeichnung.lower())
 
-while True:
+while True: # Hier geht es zurück wenn der Nutzer noch was bestellen will.
     for artikel in artikelListe:
         print("-", artikel.bezeichnung, str(artikel.preis) + "€")
 
 
-    while True:
+    while True: # Hier geht es zurück wenn der Nutzer einen Artikel auswählt, der nicht existiert.
         artikelAuswahl = input("Wählen Sie den Artikel aus, den sie kaufen möchten: ")
         if artikelAuswahl.lower() in artikelListePruefung:
             break
         else:
             print("Bitte wählen Sie einen gültigen Artikel aus.")
 
-    while True:
+    while True: # Hier geht es zurück, wenn der Nutzer alles eingibt, was keine positive Ganzzahl ist.
         try:
             artikelAuswahlMenge = int(input("Geben Sie an, wie viel Sie bestellen wollen: "))
-            break
+            if artikelAuswahlMenge >= 1:
+                break
+            else:
+                print("Kann nicht 0 oder weniger bestellen.")
         except ValueError:
-            print("Bitte Geben Sie nur Ganzzahlen an.")
+            print("Bitte Geben Sie nur positive Ganzzahlen an.")
 
     while True:
         bestellungNachname = input("Geben Sie Ihren Nachnamen an: ")
@@ -87,8 +77,16 @@ while True:
 
     bestellungLieferzeitraum = str(randint(2, 3)) + " Tage"
 
-    bestellbestaetigung(bestellungNachname, bestellungVorname, bestellungStrasse, bestellungHausnummer,
-    bestellungZahlungsmethode, bestellungLieferzeitraum, artikelAuswahl)
+    print("Sie haben bestellt:")
+    print(str(artikelAuswahlMenge) + "x", artikelAuswahl)
+    print("Ihre Lieferadresse:")
+    print(bestellungVorname, bestellungNachname)
+    print(bestellungStrasse, str(bestellungHausnummer))
+    print("Voraussichtlicher Lieferzeitraum:")
+    print(bestellungLieferzeitraum)
+    print("Ihre Zahlungsmethode:")
+    print(bestellungZahlungsmethode)
+    input("Drücken Sie Enter zum bestätigen: ")
 
     print("Möchten Sie noch etwas bestellen?")
     nochMal = input("J/N: ")
