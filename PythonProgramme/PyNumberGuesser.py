@@ -1,6 +1,6 @@
 from random import randint
 
-cheat = False #Cheat feature for if you want to be a little cheater. Should be True or False.
+cheat = False # Cheat feature for if you want to be a little cheater. Should be True or False.
 
 while True:
     print("Welcome to the Py Number guessing game!")
