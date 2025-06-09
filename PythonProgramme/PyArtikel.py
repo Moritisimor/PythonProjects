@@ -18,7 +18,7 @@ class Artikel:
     def besitzer_lieferung(self, menge):
         self.stueckzahl += menge
 
-zahlungsmethodenListe = ["Banküberweisung", "Kreditkarte", "DebitKarte", "BuyFriend", "Rechnung"]
+zahlungsmethodenListe = ["Banküberweisung", "Kreditkarte", "Debitkarte", "BuyFriend", "Rechnung"]
 
 artikelListe = [
 pc := Artikel("PC", 249.99, 14),
@@ -34,7 +34,6 @@ for artikel in artikelListe:
 while True: # Hier geht es zurück wenn der Nutzer noch was bestellen will.
     for artikel in artikelListe:
         print("-", artikel.bezeichnung, str(artikel.preis) + "€")
-
 
     while True: # Hier geht es zurück wenn der Nutzer einen Artikel auswählt, der nicht existiert.
         artikelAuswahl = input("Wählen Sie den Artikel aus, den sie kaufen möchten: ")
