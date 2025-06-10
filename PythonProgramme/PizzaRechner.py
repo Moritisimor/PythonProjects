@@ -18,8 +18,8 @@ while True:
 
     Flaeche1 = (pi * Radius1 * Radius1)
     Flaeche2 = (pi * Radius2 * Radius2)
-    Preisprocm1 = (Preis1 / Flaeche1 )
-    Preisprocm2 = (Preis2 / Flaeche2 )
+    Preisprocm1 = (Preis1 / Flaeche1)
+    Preisprocm2 = (Preis2 / Flaeche2)
 
     #Berechnung
 
