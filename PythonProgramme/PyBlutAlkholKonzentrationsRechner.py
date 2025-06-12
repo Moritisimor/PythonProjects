@@ -16,11 +16,11 @@ while True: # Wenn der folgende Input nicht männlich oder weiblich entspricht g
         print("Bitte wählen Sie ein gültiges Geschlecht aus.") # Sag dem Nutzer, dass seine Eingabe ungültig war und geh zurück zum Anfang der While True Schleife
 
 if Geschlecht.lower() in["männlich","m"]: # Wenn die Eingabe männlich ist:
-    GeschlechtFaktor = 0.68 #Definierung des Geschlechtfaktors bei Männlichkeit
+    GeschlechtFaktor = 0.68 # Definierung des Geschlechtfaktors bei Männlichkeit
 else: # Sonst:
-    GeschlechtFaktor = 0.55 #Definierung des Geschlechtfaktors bei Weiblichkeit
+    GeschlechtFaktor = 0.55 # Definierung des Geschlechtfaktors bei Weiblichkeit
 
-#Berechnungen
+# Berechnungen
 
 GramAlkoholBier = 18 * AnzahlBier
 GramAlkoholKorn = 5 * AnzahlKorn
@@ -37,3 +37,5 @@ if BAK > 1.09:
     print("Ihre BAK ist deutlich zu hoch, Autofahren sehr illegal! Straftat mit bis zu 5 Jahre Führerscheinentzug und möglicher Freiheitsstrafe.")
 elif BAK > 0.49:
     print("Ihre BAK ist zu hoch, Autofahren illegal! Ordnungswidrigkeit mit bis zu 1000€ Strafe.")
+else:
+    print("Autofahren wäre kein Problem, sofern Sie sich dazu bereit fühlen.")
