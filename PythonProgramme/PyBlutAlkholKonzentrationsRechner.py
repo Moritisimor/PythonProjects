@@ -25,12 +25,7 @@ else: # Sonst:
 GramAlkoholBier = 18 * AnzahlBier
 GramAlkoholKorn = 5 * AnzahlKorn
 GeschlechtGewichtBilanz = GeschlechtFaktor * Gewicht
-if AnzahlBier == 0: # Wenn der Nutzer kein Bier getrunken hat, fällt das nicht in die Berechnung, denn durch Null teilen wird nichts bringen
-    BAK = (GramAlkoholKorn / GeschlechtGewichtBilanz)
-elif AnzahlKorn == 0: # Gleiches Prinzip, nur mit Korn
-    BAK = (GramAlkoholBier / GeschlechtGewichtBilanz)
-else: # Wenn beide größer als Null 
-    BAK = ((GramAlkoholBier + GramAlkoholKorn) / GeschlechtGewichtBilanz)
+BAK = ((GramAlkoholBier + GramAlkoholKorn) / GeschlechtGewichtBilanz)
 
 print("Ihre geschätzte Blutalkoholkonzentration liegt bei:", BAK) #Ergebnis
 if BAK > 1.09:
