@@ -9,10 +9,9 @@ def quiz(frage, richtigeantwort):
         antwort = input("Geben Sie Ihre Antwort ein: ")
         if antwort.lower() in [richtigeantwort]:
             print("Das ist korrekt!")
-            break
         else:
             print("Das ist falsch!")
-            break
+        break
 
 while True:
     QuizAuswahl = randint (0,9)
