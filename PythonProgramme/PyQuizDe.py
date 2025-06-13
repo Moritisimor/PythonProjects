@@ -7,7 +7,7 @@ def quiz(frage, richtigeantwort):
     while True:
         print(frage)
         antwort = input("Geben Sie Ihre Antwort ein: ")
-        if antwort.lower() in [richtigeantwort]:
+        if antwort.lower() == richtigeantwort:
             print("Das ist korrekt!")
         else:
             print("Das ist falsch!")
