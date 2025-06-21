@@ -7,7 +7,7 @@ while True:
     while True:
         try:
             entry = (input("Enter your number: "))
-            if entry == "end":
+            if entry.lower() == "end":
                 break
             else:
                 listToBeSorted.append(int(entry))
@@ -19,7 +19,7 @@ while True:
 
     print("\nYour sorted list:")
     print(sorted(listToBeSorted))
-    
+
     print("\nThe average number in your list:")
     print(sum(listToBeSorted) / len(listToBeSorted))
 
