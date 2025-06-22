@@ -1,10 +1,10 @@
 def makelist():
-    listToBeSorted = []
+    listToBeSorted = [] # Start with an empty list.
     print("Enter each number individually and end the list by typing 'end' at your last input or by just leaving it blank.")
     while True:
         try:
             entry = (input("Enter your number: ")).lower().strip()
-            if entry in ["end", ""]:
+            if entry in ["end", ""]: # Keywords for breaking the loop and entering the main function.
                 break
             else:
                 formatEntry = float(entry)
@@ -13,8 +13,8 @@ def makelist():
                 listToBeSorted.append(formatEntry)
         except ValueError:
             print("Only enter numbers")
-    if listToBeSorted:
-        return listToBeSorted
+    if listToBeSorted: # Handling Lists like a boolean. If empty False else True.
+        return listToBeSorted # The finished List.
 
 def getaverage(varlist):
     if varlist:
