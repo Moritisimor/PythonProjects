@@ -21,18 +21,18 @@ while True:
     if len(listToBeSorted) == 0:
         print("Your list is empty.")
     else:
-        print("\nYour original list:")
-        print(listToBeSorted)
+        print(f"\nYour original list: \n{listToBeSorted}")
 
-        print("\nYour sorted list:")
-        print(sorted(listToBeSorted))
+        if sorted(listToBeSorted) == listToBeSorted:
+            print("\nYour list was already sorted.")
+        else:
+            print(f"\nYour sorted list: \n{sorted(listToBeSorted)}")
 
         average = sum(listToBeSorted) / len(listToBeSorted)
         if average.is_integer():
             average = int(average)
-            
-        print("\nThe average number in your list:")
-        print(average)
+
+        print(f"\nThe average number in your list: \n{average}")
 
     again = input("\nWould you like to sort another list? \nY/N: ")
     if again.lower() in ["y", "yes"]:
