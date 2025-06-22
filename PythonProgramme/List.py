@@ -7,11 +7,14 @@ while True:
 
     while True:
         try:
-            entry = (input("Enter your number: "))
-            if entry.lower().strip() in ["end", ""]:
+            entry = (input("Enter your number: ")).lower().strip()
+            if entry in ["end", ""]:
                 break
             else:
-                listToBeSorted.append(float(entry))
+                formatEntry = float(entry)
+                if formatEntry.is_integer():
+                    formatEntry = int(formatEntry)
+                listToBeSorted.append(formatEntry)
         except ValueError:
             print("Only enter numbers")
 
@@ -24,8 +27,12 @@ while True:
         print("\nYour sorted list:")
         print(sorted(listToBeSorted))
 
+        average = sum(listToBeSorted) / len(listToBeSorted)
+        if average.is_integer():
+            average = int(average)
+            
         print("\nThe average number in your list:")
-        print(sum(listToBeSorted) / len(listToBeSorted))
+        print(average)
 
     again = input("\nWould you like to sort another list? \nY/N: ")
     if again.lower() in ["y", "yes"]:
