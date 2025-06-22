@@ -15,20 +15,14 @@ def makelist():
             print("Only enter numbers")
     if listToBeSorted:
         return listToBeSorted
-    else:
-        return None
 
 def getaverage(varlist):
     if varlist:
         return sum(varlist) / len(varlist)
-    else:
-        return None
 
 def sortlist(varlist):
     if varlist:
         return sorted(varlist)
-    else:
-        return None
 
 def main():
     print("Welcome to List.py! \nThis program will allow you to sort numerical lists and calculate the average number.")
