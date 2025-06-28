@@ -1,4 +1,4 @@
-# MINAC stands for MINAC Is Not A CPU
+# Virtual Imperative Python Processor Simulator
 
 simRegisters = { # Dictionary which holds registers. You can change values by adressing the "rgx" keys
 "rg1" : None,
@@ -79,17 +79,17 @@ def SHOWRG(simReg): # Prints the current value of selected register to console
 # EXECUTE REGION
 
 try:
-    LOADRG(100, "rg1")
-    LOADRG(200, "rg2")
-    LOADRG(300, "rg3")
-    ADDOUT("rg1", "rg2", "rg4")
-    LOADRGRAM("rg4")
-    SHOWRAMAD(0)
-    CLRALL()
-    SHOWRG("rg1")
-    SHOWRG("rg2")
-    SHOWRG("rg3")
-    SHOWRG("rg4")
+    LOADRG(100, "rg1"),
+    LOADRG(200, "rg2"),
+    LOADRG(300, "rg3"),
+    ADDOUT("rg1", "rg2", "rg4"),
+    LOADRGRAM("rg4"),
+    SHOWRAMAD(0),
+    CLRALL(),
+    SHOWRG("rg1"),
+    SHOWRG("rg2"),
+    SHOWRG("rg3"),
+    SHOWRG("rg4"),
     SHOWRAM()
 except Exception as error:
     print(f"THE FOLLOWING ERROR HAS OCCURRED: {error} AND THE PROGRAM WILL SHUT DOWN NOW.")
