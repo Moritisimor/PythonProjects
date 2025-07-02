@@ -28,24 +28,26 @@ def sphere(radius):
     return (4 / 3) * pi * cube(radius)
 
 funcsDict = {
-    "Square"    : square,
-    "Cube"      : cube,
-    "Triangle"  : triangle,
-    "Circle"    : circle,
-    "Cone"      : cone,
-    "Pyramid"   : pyramid,
-    "Cuboid"    : cuboid,
-    "Prism"     : prism,
-    "Sphere"    : sphere
+    "square"    : square,
+    "cube"      : cube,
+    "triangle"  : triangle,
+    "circle"    : circle,
+    "cone"      : cone,
+    "pyramid"   : pyramid,
+    "cuboid"    : cuboid,
+    "prism"     : prism,
+    "sphere"    : sphere
 }
 
 for func in funcsDict:
     print(f"- {func}")
 while True:
-    bodyToCalc = input("Enter the body you would like to calculate: ")
+    bodyToCalc = input("Enter the body you would like to calculate: ").lower().strip()
     if bodyToCalc in (func.lower() for func in funcsDict):
-        continue
-    elif bodyToCalc.lower().strip() == "exit":
+        break
+    elif bodyToCalc == "exit":
         exit()
     else:
         print("Error, try again or enter exit to quit.")
+
+funcsDict[bodyToCalc]()
