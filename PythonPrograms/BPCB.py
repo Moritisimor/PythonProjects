@@ -10,12 +10,12 @@ while True:
     if message.lower() in["hello", "hi", "hey", "good day"]:
         print("BPCB: Hello! How can I help you today?")
 
-    elif message.lower() in["how are you?","how are ya?","how's it going?", ""]:
+    elif message.lower() in["how are you?","how are ya?","how's it going?"]:
         print("BPCB: I'm good! Thank you for asking!")
 
     elif message.lower() in["exit","goodbye","bye","cya"]:
         print("BPCB: Goodbye!")
-        sleep(2)
+        input("Press enter to quit: ")
         exit()
 
     elif message.lower() in["tell me a joke"]:
