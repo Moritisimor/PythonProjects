@@ -1,5 +1,5 @@
 def makelist():
-    listToBeSorted = [] # Start with an empty list.
+    listtobesorted = [] # Start with an empty list.
     print("Enter each number individually and end the list by typing 'end' at your last input or by just leaving it blank.")
     while True:
         try:
@@ -7,32 +7,38 @@ def makelist():
             if entry in ["end", ""]: # Keywords for breaking the loop and entering the main function.
                 break
             else:
-                formatEntry = float(entry)
-                if formatEntry.is_integer():
-                    formatEntry = int(formatEntry)
-                listToBeSorted.append(formatEntry)
+                formatentry = float(entry)
+                if formatentry.is_integer():
+                    formatentry = int(formatentry)
+                listtobesorted.append(formatentry)
         except ValueError:
             print("Only enter numbers")
-    if listToBeSorted: # Handling Lists like a boolean. If empty False else True.
-        return listToBeSorted # The finished List.
+    if listtobesorted: # Handling Lists like a boolean. If empty False else True.
+        return listtobesorted # The finished List.
+    else:
+        return None
 
 def getaverage(varlist):
     if varlist:
         return sum(varlist) / len(varlist)
+    else:
+        return None
 
 def sortlist(varlist):
     if varlist:
         return sorted(varlist)
+    else:
+        return None
 
 def main():
     print("Welcome to List.py! \nThis program will allow you to sort numerical lists and calculate the average number.")
     while True:
-        finishedList = makelist()
-        sortedList = sortlist(finishedList)
-        average = getaverage(finishedList)
-        if finishedList:
-            print(f"\nYour original list: \n{finishedList}")
-            print(f"\nYour sorted list: \n{sortedList}")
+        finishedlist = makelist()
+        sortedlist = sortlist(finishedlist)
+        average = getaverage(finishedlist)
+        if finishedlist:
+            print(f"\nYour original list: \n{finishedlist}")
+            print(f"\nYour sorted list: \n{sortedlist}")
             print(f"\nThe average number of your list is: \n{average}")
         else:
             print("It looks like the list you entered was empty.")
