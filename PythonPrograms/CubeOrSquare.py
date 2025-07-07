@@ -1,10 +1,10 @@
-def square(x):
-    y = x * x
-    return y
+def square(varx):
+    vary = varx * varx
+    return vary
 
-def cube(x):
-    y = x * x * x
-    return y
+def cube(varx):
+    vary = varx * varx * varx
+    return vary
 
 try:
     x = float(input("Enter a number you would like to cube or square: "))
