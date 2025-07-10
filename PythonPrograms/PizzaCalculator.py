@@ -1,16 +1,19 @@
 from math import pi
 
-print("Welcome to the pizza calculator. \nThis tool will tell you which of two pizzas offers more value per cm².")
-while True:
+def getvalidfloat(prompt):
     while True:
         try:
-            radius1 = float(input("Enter the radius of the first pizza: "))
-            price1 = float(input("Enter the price of the first pizza: "))
-            radius2 = float(input("Enter the radius of the second pizza: "))
-            price2 = float(input("Enter the price of the second pizza: "))
-            break
+            return float(input(prompt))
         except ValueError:
             print("Please only enter numbers.")
+
+print("Welcome to the pizza calculator. \nThis tool will tell you which of two pizzas offers more value per cm².")
+while True:
+
+    radius1 = getvalidfloat("Enter the radius of the first pizza: ")
+    price1 = getvalidfloat("Enter the price of the first pizza: ")
+    radius2 = getvalidfloat("Enter the radius of the second pizza: ")
+    price2 = getvalidfloat("Enter the price of the second pizza: ")
 
     # Calculation of Price/cm²
 
