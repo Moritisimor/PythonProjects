@@ -3,14 +3,16 @@ from random import randint
 
 def generaterandomnumber() -> None:
     try:
-        a = int(firstNumberText.get("1.0", "end-1c"))
-        b = int(secondNumberText.get("1.0", "end-1c"))
+        a = int(firstNumberEntry.get())
+        b = int(secondNumberEntry.get())
         if a > b:
-            outputNumberLabel.config(text="First number must be smaller than second number.")
+            outputNumberLabel.config(text = "First number must be smaller than second number.")
+        elif a == b:
+            outputNumberLabel.config(text = "Numbers cannot be equal!")
         else:
-            outputNumberLabel.config(text=str(randint(a, b)))
+            outputNumberLabel.config(text = str(randint(a, b)))
     except ValueError:
-        outputNumberLabel.config(text="Please only enter numbers!")
+        outputNumberLabel.config(text = "Please only enter numbers!")
 
 mainWin = tk.Tk()
 mainWin.title("Random Number Generator")
@@ -22,14 +24,14 @@ titleLabel.pack(pady = 10)
 firstNumberLabel = tk.Label(mainWin, text = "Enter your first number")
 firstNumberLabel.pack()
 
-firstNumberText = tk.Text(mainWin, width = 8, height = 0.5)
-firstNumberText.pack(pady = 10)
+firstNumberEntry = tk.Entry(mainWin)
+firstNumberEntry.pack(pady = 10)
 
 secondNumberLabel = tk.Label(mainWin, text = "Enter your second number")
 secondNumberLabel.pack()
 
-secondNumberText = tk.Text(mainWin, width = 8, height = 0.5)
-secondNumberText.pack(pady = 10)
+secondNumberEntry = tk.Entry(mainWin)
+secondNumberEntry.pack(pady = 10)
 
 generateButton = tk.Button(mainWin, text = "Click me!", command = lambda: generaterandomnumber())
 generateButton.pack(pady = 20)
