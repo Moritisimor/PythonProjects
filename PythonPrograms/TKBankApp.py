@@ -57,7 +57,6 @@ def startloginwindow():
     def login(name, password):
         global loggedIn
         for user in userList:
-            user.authlogin(name, password)
             if user.authlogin(name, password) is not None:
                 loggedIn = user.authlogin(name, password)
                 break
