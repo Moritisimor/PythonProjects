@@ -27,7 +27,7 @@ def startregwindow():
                 messagebox.showerror("Error", "User with this name already exists.", parent=regwindow)
                 return
 
-        if rwuserentry == "" or rwpassentry == "":
+        if rwuserentry.get().strip() == "" or rwpassentry.get().strip() == "":
             messagebox.showerror("Error", "Input fields can not be blank.", parent=regwindow)
         else:
             userList.append(User(name, password))
@@ -94,7 +94,7 @@ def startloginwindow():
 
 def startwithdrawwindow():
     def withdraw():
-        if wwwithdrawentry.get() == "":
+        if wwwithdrawentry.get().strip() == "":
             messagebox.showerror("Error", "Do not leave input fields blank")
             return
         try:
@@ -127,7 +127,7 @@ def startwithdrawwindow():
 
 def startdepositwindow():
     def deposit():
-        if dwdepositentry.get() == "":
+        if dwdepositentry.get().strip() == "":
             messagebox.showerror("Error", "Do not leave input fields blank")
             return
         try:
@@ -160,7 +160,7 @@ def startdepositwindow():
 
 def starttransferwindow():
     def transfer():
-        if twtransferentry.get() == "":
+        if twtransferentry.get().strip() == "":
             messagebox.showerror("Error", "Input fields can not be empty")
             return
         try:
