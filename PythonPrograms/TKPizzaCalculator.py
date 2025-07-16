@@ -17,7 +17,6 @@ def calculate():
     except ValueError:
         messagebox.showerror("Error", "Only enter numbers and do not leave input fields blank.")
 
-
 mainWin = tk.Tk()
 mainWin.geometry("250x460")
 mainWin.title("Pizza Calculator")
