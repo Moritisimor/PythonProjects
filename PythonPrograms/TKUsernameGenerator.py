@@ -39,7 +39,7 @@ MainWindow.title("Username Generator")
 
 tk.Label(MainWindow, text="Welcome to the Username Generator!").pack(pady=10)
 
-tk.Button(MainWindow, text="Generate!", command=lambda: generateRandomName()).pack(pady=10)
+tk.Button(MainWindow, text="Generate!", command=lambda: generaterandomname()).pack(pady=10)
 outputText = tk.Text(MainWindow, height=1, width=25)
 outputText.pack(pady=10)
 MainWindow.mainloop()
