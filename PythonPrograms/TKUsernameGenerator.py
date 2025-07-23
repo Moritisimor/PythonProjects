@@ -26,7 +26,7 @@ suffixList = [
     "Mage"
 ]
 
-def generateRandomName():
+def generaterandomname():
     prefix = prefixList[randint(0, len(prefixList) - 1)]
     suffix = suffixList[randint(0, len(suffixList) - 1)]
     outputText.delete(1.0, tk.END)
