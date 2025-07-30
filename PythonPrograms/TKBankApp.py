@@ -14,8 +14,8 @@ class User:
             return None
 
 userList = [
-    User("root", "root", 1000), # Starting users
-    User("root1", "root1", 1000)
+    User("root", "root", 1000.0), # Starting users
+    User("root1", "root1", 1000.0)
 ]
 
 loggedIn = User(None, None)
@@ -109,7 +109,7 @@ def startwithdrawwindow():
         wwwithdrawentry = tk.Entry(withdrawwindow)
         wwwithdrawentry.pack(pady=5)
 
-        tk.Button(withdrawwindow, text="Withdraw", command= lambda: withdraw()).pack(pady=5)
+        tk.Button(withdrawwindow, text="Withdraw", command=lambda: withdraw()).pack(pady=5)
 
 def startdepositwindow():
     def deposit():
@@ -119,7 +119,7 @@ def startdepositwindow():
         try:
             loggedIn.money += float(dwdepositentry.get())
             messagebox.showinfo("Success", f"Succesfully deposited {dwdepositentry.get()} $", parent=depositwindow)
-            mwBalanceLabel.config(text=f"Current Balance: {loggedIn.money}")
+            mwBalanceLabel.config(text=f"Current Balance: {loggedIn.money} $")
             depositwindow.destroy()
         except ValueError:
             messagebox.showerror("Error", "Only enter numbers", parent=dwdepositentry)
